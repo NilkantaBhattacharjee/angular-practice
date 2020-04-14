@@ -8,5 +8,6 @@
   {{text | summary:30}}
 </div>
 <div>
-  <app-favourite [alias-is-favourite]="post.isFavourite"></app-favourite>
+  <app-favourite [alias-is-favourite]="post.isFavourite" (change)="getCount($event)"></app-favourite>
 </div>
+Clicked me button was clicked for {{count}} times.

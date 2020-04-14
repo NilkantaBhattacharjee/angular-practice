@@ -7,6 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
 
+  count = 0;
+
   title = 'Angular Practice';
   text = `In the interest of public health and to ensure the well-being of
   our employees and partners Siemens Stiftung is reducing direct person-to-person
@@ -18,4 +20,9 @@ export class AppComponent {
     title: 'Title',
     isFavourite: true
   };
+
+  getCount(dataFromFavouriteComponent) {
+    this.count = dataFromFavouriteComponent.count;
+    console.log('Clicked me button was clicked' + dataFromFavouriteComponent.anotherCount);
+  }
 }

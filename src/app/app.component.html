@@ -2,7 +2,8 @@
 <!--<div style="text-align:center">-->
   <div>
   <h1>
-    Welcome to {{ title }}!
+    Welcome to {{ title | uppercase}}!
   </h1>
   <app-courses></app-courses>
-</div>  
+  {{text | summary:30}}
+</div>

@@ -4,11 +4,14 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  encapsulation: ViewEncapsulation.Emulated
+  // encapsulation: ViewEncapsulation.ShadowDom
 })
 export class AppComponent {
 
   count = 0;
+
+  headerName = 'App Header';
+  bodyName = 'App Body';
 
   title = 'Angular Practice';
   text = `In the interest of public health and to ensure the well-being of

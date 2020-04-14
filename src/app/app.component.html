@@ -14,6 +14,9 @@ Clicked me button was clicked for {{count}} times.
 <div>
   <app-bootstrap-panel>
     <div class="heading">App Heading</div>
-    <div class="body">App Body</div>
+    <ng-container class="body"> <!-- using ng-container-->
+      <h3>App Body</h3>
+      <p>Some more text</p>
+    </ng-container>
   </app-bootstrap-panel>
 </div>

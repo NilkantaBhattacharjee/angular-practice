@@ -8,10 +8,17 @@ import { CoursesService } from './courses.service';
                <ul>
                     <li *ngFor='let course of getCourseList()'>{{course}}</li>
                </ul>
+
+               <input (keyup)="onKeyUp($event)"/>
+               <br/>
+               <input (keyup.enter)="onKeyUpEnterEvent($event)"/>
+               <br/>
+               Your Name:<input #name (keyup.enter)="nameInputEvent(name.value)"/>
+
                <div (click)="onDivClick();">
                     <button class="btn btn-primary" [class.Active]="isActive" [disabled]="!isActive"
                     [style.background-color]="isActive ? 'Red' : 'Blue'"
-                    (click)="onClick($event)">Save</button>
+                    (click)="onClick($event, name.value)">Save</button>
                </div>
     `
 })
@@ -38,13 +45,29 @@ export class CoursesComponent {
         return this.service.getCourseList();
     }
 
-    onClick($event: any) {
+    onClick($event: any, name: string) {
         $event.stopPropagation();
-        console.log('Button was clicked');
+        console.log('Button was clicked->' + name);
         console.log($event);
     }
 
     onDivClick($event: any) {
         console.log('Div was clicked');
+    }
+
+    onKeyUp($event: any) {
+        if ($event.keyCode === 13) {
+            console.log('Enter was clicked');
+        }
+        console.log('onKeyUp functional was called with value->' + $event.target.value);
+    }
+
+    onKeyUpEnterEvent($event) {
+        console.log('onKeyUpEnterEvent -> Enter was clicked');
+        console.log($event);
+    }
+
+    nameInputEvent(name: string) {
+        console.log(name);
     }
 }

@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!--<div style="text-align:center">-->
-  <div>
+  <!--<div>
   <h1>
     Welcome to {{ title | uppercase}}!
   </h1>
@@ -15,8 +15,25 @@ Clicked me button was clicked for {{count}} times.
   <app-bootstrap-panel>
     <div class="heading">App Heading</div>
     <ng-container class="body"> <!-- using ng-container-->
-      <h3>App Body</h3>
+      <!--<h3>App Body</h3>
       <p>Some more text</p>
     </ng-container>
   </app-bootstrap-panel>
+</div>-->
+
+<ul class="nav nav-pills">
+  <li [class.active]="viewMode == 'map'"><a (click)="viewMode='map'">Map View</a></li>
+  <li [class.active]="viewMode == 'list'"><a (click)="viewMode='list'">List View</a></li>
+</ul>
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map view content</div>
+  <div *ngSwitchCase="'view'">List view content</div>
+  <div *ngSwitchDefault>No view is defined</div>
 </div>
+
+<ul>
+  <li *ngFor="let course of courses; index as i; even as isEven">
+    {{i}} - {{course}} <span *ngIf="isEven"></span>
+  </li>
+</ul>
+

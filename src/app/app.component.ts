@@ -8,6 +8,8 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 })
 export class AppComponent {
 
+  viewMode = '';
+
   count = 0;
 
   headerName = 'App Header';
@@ -29,4 +31,5 @@ export class AppComponent {
     this.count = dataFromFavouriteComponent.count;
     console.log('Clicked me button was clicked' + dataFromFavouriteComponent.anotherCount);
   }
+
 }
